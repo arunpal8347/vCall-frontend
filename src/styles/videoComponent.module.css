@@ -1,0 +1,114 @@
+/* ==== MAIN CONTAINER ==== */
+.meetVideoContainer {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(159, 201, 239);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* ==== SELF VIDEO ==== */
+.meetUserVideo {
+    position: absolute;
+    bottom: 15vh;
+    left: 2vh;
+    height: 18vh;
+    width: auto;
+    border-radius: 12px;
+    border: 2px solid yellow;
+    z-index: 10;
+    background: black;
+    transition: all 0.3s ease;
+}
+
+/* Chat open → self video corner me shift */
+.meetVideoContainer.chatOpen .meetUserVideo {
+    left: auto;
+    right: 27vw;  /* chat box ke bagal */
+    bottom: 2vh;
+}
+
+/* ==== BUTTONS ==== */
+.buttonContainer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    z-index: 20;
+}
+
+.buttonContainer svg {
+    font-size: 2.5rem;
+}
+
+/* ==== CONFERENCE VIEW ==== */
+.conferenceView {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Individual video */
+.conferenceView video {
+    border-radius: 10px;
+    border: 2px solid black;
+    object-fit: cover;
+    background: black;
+    transition: all 0.3s ease;
+}
+
+/* ---- Layout Variants ---- */
+
+/* 1 remote user → full screen */
+.conferenceView.one video {
+    width: 100%;
+    height: 100%;
+}
+
+/* 2 remote users → split */
+.conferenceView.two video {
+    width: 48%;
+    height: 95%;
+}
+
+/* 3–4 remote users → 2x2 grid */
+.conferenceView.three video,
+.conferenceView.four video {
+    width: 48%;
+    height: 48%;
+}
+
+/* 5+ users → smaller grid */
+.conferenceView.many video {
+    width: 30%;
+    height: 30%;
+}
+
+/* ==== CHAT ROOM ==== */
+.chatRoom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 25vw;
+    background: white;
+    border-left: 2px solid #ccc;
+    padding: 10px;
+    z-index: 15;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+/* Chat open → shrink videos to leave space */
+.meetVideoContainer.chatOpen .conferenceView {
+    margin-right: 25vw; /* Leave space for chat */
+}

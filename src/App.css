@@ -1,0 +1,239 @@
+/* LANDING PAGE..... */
+/* Navbaar */
+.landingPageContainer{
+  width: 100vw;
+  min-height: 100vh;
+  background: url("/public/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  overflow-x: hidden;
+}
+
+.landingPageContainer nav{
+  padding-inline: 1.2rem;
+  padding-block: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landingPageContainer nav h2{
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.landingPageContainer nav .navList{
+  display: flex;
+  gap: 1.6rem;
+  cursor: pointer;
+}
+
+/* Body */
+
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  height: 80vh;
+  align-items: center;
+}
+
+.landingMainContainer > div:nth-child(1){
+  font-size: 2rem;
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button']{
+  background: #D97500;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: 1.9rem;
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button'] a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.landingMainContainer > div:nth-child(2) img{
+  height: 70vh;
+  width: auto;
+}
+
+/* --- Responsive Styles Start Here --- */
+
+/* First Breakpoint: For screens smaller than 1775px */
+@media (max-width: 1775px) {
+  .landingMainContainer {
+    padding-inline: 2.5rem; /* Reduce horizontal padding */
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.8rem; /* Slightly decrease the base font size for the text block */
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    height: 60vh; /* Make the image a bit smaller */
+  }
+}
+
+
+/* Second Breakpoint: For screens smaller than 1200px */
+@media (max-width: 1275px) {
+  .landingMainContainer {
+    flex-direction: column; /* Stack the text and image vertically */
+    justify-content: center; /* Center the content on the screen */
+    text-align: center; /* Center-align the text */
+    gap: 2rem; /* Add space between the text and image */
+    height: auto; /* Adjust height to fit content */
+    padding-block: 2rem;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role='button'] {
+    margin-inline: auto; /* Center the "Get Started" button */
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    height: 45vh; /* Further reduce image size for the vertical layout */
+    max-width: 90%; /* Ensure image doesn't overflow */
+  }
+
+  /* Adjust navigation for smaller screens */
+  .landingPageContainer nav {
+    flex-direction: column; /* Stack logo and nav links */
+    gap: 1.5rem;
+  }
+}
+
+
+/* Third Breakpoint: For mobile screens smaller than 775px */
+@media (max-width: 775px) {
+
+  .landingPageContainer nav .navList {
+    gap: 1.2rem; /* Adjust gap for nav items */
+  }
+
+  .landingMainContainer {
+    padding-inline: 1rem; /* Reduce side padding */
+  }
+
+  /* This specifically targets the h1 tag to make it smaller */
+  .landingMainContainer > div:nth-child(1) h1 {
+    font-size: 2.3rem; /* Small enough to keep "Connect Anytime Anywhere" on one line */
+    line-height: 1.2;
+  }
+
+  /* This targets the p tag to make it smaller */
+  .landingMainContainer > div:nth-child(1) p {
+    font-size: 1rem;
+    margin-top: 0.5rem; /* Adds a little space below the heading */
+  }
+
+  /* Adjusting the 'Get Started' button for smaller screens */
+  .landingMainContainer > div:nth-child(1) div[role='button'] {
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role='button'] a {
+    font-size: 1.2rem;
+  }
+  
+  /* Making the image smaller on mobile */
+  .landingMainContainer > div:nth-child(2) img {
+    height: 38vh;
+  }
+}
+
+
+
+
+/* HOME PAGE....... */
+/* home page */
+.navBar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+  text-align: center;
+  background-color: rgba(209, 209, 209, 0.522);
+}
+
+.meetContainer{
+  display: flex;
+  padding-inline: 20px;
+  height: 80vh;
+  gap: 10vw;
+  justify-content: center;
+}
+
+.leftPanel{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel{
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel > img{
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+}
+
+@media (max-width: 1100px) {
+  .meetContainer {
+    /* Change the layout to vertical (stacked) */
+    flex-direction: column;
+    
+    /* === THIS IS THE NEW LINE === */
+    /* Add margin to create a gap below the navbar */
+    margin-top: 40px; 
+
+    /* Center the items horizontally */
+    align-items: center; 
+    
+    /* Adjust vertical spacing */
+    gap: 5vh; 
+    
+    /* Allow height to grow with content */
+    height: auto; 
+    
+    /* Center text for all children */
+    text-align: center; 
+  }
+
+  .leftPanel h2 {
+    /* Reduce the font size of the heading */
+    font-size: 1.8rem; 
+  }
+  
+  .leftPanel > div {
+    /* Stack the h2 and the input box vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Add space between heading and input */
+  }
+
+  .rightPanel > img {
+    /* Make the image take up more screen width */
+    width: 70vw; 
+    
+    /* Set a maximum width to prevent it from being too large on tablets */
+    max-width: 450px; 
+  }
+
+  .navBar {
+    /* Optional: Adjust navbar padding for smaller screens */
+    padding-inline: 10px;
+  }
+}
+
+
+
