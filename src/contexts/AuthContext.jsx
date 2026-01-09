@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import httpStatus from "http-status";
 
 export const AuthContext = createContext({});
+const server_url = import.meta.env.VITE_SERVER_URL;
 
 const client = axios.create({
-  baseURL: "http://localhost:8000/api/v1/users"
+  baseURL: `${server_url}/api/v1/users`
 })
 
 export const AuthProvider = ({ children }) => {
