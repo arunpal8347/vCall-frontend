@@ -21,7 +21,7 @@ import Badge from '@mui/material/Badge';
 
 
 
-const server_url = "http://localhost:8000";
+const server_url = import.meta.env.VITE_SERVER_URL;
 
 var connections = {};
 
